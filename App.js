@@ -21,21 +21,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { IconButton, Colors } from 'react-native-paper';
 import Pdf from 'react-native-pdf';
 
-
-function PdfScreen({ navigation }) { //  pdf 
-  
- const source = {uri:'http://samples.leanpub.com/thereactnativebook-sample.pdf',cache:true};
-  
-
-  return (
-    <View style={styles.container}>
-      <Pdf/>
-    </View>
-  )
-  
-  
-}
-
 function СoursebooksScreen({ route, navigation }) { //  книги в курсе 
   const [books, setBooks] = useState([]);
   const { query } = route.params;
@@ -158,7 +143,7 @@ function CoursesStackScreen() {     // шапка курсов
         ),
       }}/>
       <CoursesStack.Screen name="Книги курсу"  component={СoursebooksScreen} options={{ headerTintColor: '#ffffff'}}/>
-      <PdfStack.Screen name="Pdf" component={PdfScreen} />
+
     </CoursesStack.Navigator>
   );
 }
